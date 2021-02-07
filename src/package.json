@@ -1,0 +1,49 @@
+{
+    "private": true,
+    "scripts": {
+        "start": "npm run dev",
+        "dev": "concurrently 'npm run development -- --watch' 'php artisan serve'",
+        "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --config=node_modules/laravel-mix/setup/webpack.config.js",
+        "watch": "npm run development -- --watch",
+        "watch-poll": "npm run watch -- --watch-poll",
+        "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --disable-host-check --config=node_modules/laravel-mix/setup/webpack.config.js",
+        "prod": "npm run production",
+        "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --config=node_modules/laravel-mix/setup/webpack.config.js"
+    },
+    "devDependencies": {
+        "@babel/preset-react": "^7.12.7",
+        "@inertiajs/inertia": "^0.3.0",
+        "@inertiajs/inertia-vue": "^0.2.0",
+        "@tailwindcss/ui": "^0.6.0",
+        "axios": "^0.19.2",
+        "babel-plugin-import": "^1.13.3",
+        "browser-sync": "^2.26.13",
+        "browser-sync-webpack-plugin": "^2.0.1",
+        "concurrently": "^5.3.0",
+        "cross-env": "^7.0",
+        "laravel-jetstream": "^0.0.3",
+        "laravel-mix": "^5.0.1",
+        "lodash": "^4.17.19",
+        "moment": "^2.26.0",
+        "portal-vue": "^2.1.7",
+        "postcss-import": "^12.0.1",
+        "resolve-url-loader": "^3.1.0",
+        "tailwindcss": "^1.8.0",
+        "vue": "^2.5.17",
+        "vue-template-compiler": "^2.6.10"
+    },
+    "dependencies": {
+        "@material-ui/core": "^4.11.1",
+        "@nivo/bar": "^0.66.0",
+        "@nivo/core": "^0.65.0",
+        "@nivo/line": "^0.65.1",
+        "fontsource-open-sans": "^3.0.9",
+        "fontsource-raleway": "^3.0.9",
+        "fontsource-roboto": "^3.0.3",
+        "json-loader": "^0.5.7",
+        "laravel-mix-react-css-modules": "^2.0.0",
+        "react": "^17.0.1",
+        "react-dom": "^17.0.1",
+        "styled-components": "^5.2.1"
+    }
+}

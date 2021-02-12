@@ -54,6 +54,9 @@ const Content = styled.div`
     }
 `;
 
+/**
+ * A component for displaying cases counts.
+ */
 const CasesCountCard = ({ country, active, recovered, deaths, flag }) => {
     return (
         <Card style={{minWidth: '330px', marginRight: '1rem'}}>

@@ -105,3 +105,9 @@ services:
       - 8025:8025
     networks:
       - laravel
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080

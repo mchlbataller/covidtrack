@@ -24,7 +24,7 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/admin/dashboard', functio
 });
 
 // Protected API that provides user data
-Route::resource('user/data', UserInfoController::class)->middleware(['auth:sanctum', 'verified']);
+Route::resource('user/data', UserInfoController::class);
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     // return Inertia\Inertia::render('Dashboard');

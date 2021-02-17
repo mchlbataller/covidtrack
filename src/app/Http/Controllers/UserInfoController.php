@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\UserInfo;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
@@ -15,7 +16,9 @@ class UserInfoController extends Controller
      */
     public function index()
     {
-        return response(Auth::user(), 200);
+        $user = User::all();
+    
+        return response($user, 200);
     }
 
     /**
@@ -25,14 +28,16 @@ class UserInfoController extends Controller
      */
     public function create(Request $request)
     {
-        $userinfo = new UserInfo;
+        $userinfo = new User;
 
         // Inject existing
-        $userinfo->user_name = Auth::user()->name;
-        $userinfo->email = Auth::user()->email;
-        $userinfo->country = $request->country;
+        $userinfo->name = $request->name;
+        $userinfo->email = $request->email;
+        $userinfo->password = $request->password;
 
         $userinfo->save();
+
+        return response([ "status" => "Success" ], 200);
     }
 
     /**
